@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://grws2xp23do6"]
+[gd_scene load_steps=24 format=3 uid="uid://grws2xp23do6"]
 
 [ext_resource type="Script" path="res://tausta.gd" id="1_7ml2h"]
 [ext_resource type="Texture2D" uid="uid://cnus2ngodh2bh" path="res://Kuvat/Sali.png" id="1_sp1qs"]
@@ -7,13 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://ttugughso8kl" path="res://Kuvat/Idle 2.png" id="5_4vw61"]
 [ext_resource type="Texture2D" uid="uid://da1entnekk84p" path="res://Kuvat/Paino.png" id="6_d5awo"]
 [ext_resource type="Texture2D" uid="uid://c171m727xcxsj" path="res://Kuvat/Painon nosto 1.png" id="6_g5135"]
-[ext_resource type="Script" path="res://StaticBody2D.gd" id="7_0ybmn"]
 [ext_resource type="Texture2D" uid="uid://cvvj2hd41161m" path="res://Kuvat/Painon nosto 2.png" id="7_7qprb"]
 [ext_resource type="Script" path="res://Points Text.gd" id="7_elu2d"]
 [ext_resource type="Texture2D" uid="uid://c4t0vmy7yr3ph" path="res://Kuvat/Painon nosto 3.png" id="8_giege"]
 [ext_resource type="Texture2D" uid="uid://d2fkvphmovu40" path="res://Kuvat/Painon nosto 4.png" id="9_fo2px"]
 [ext_resource type="Texture2D" uid="uid://5xabyxd4i1hv" path="res://Kuvat/Painon nosto 5.png" id="10_swjd5"]
 [ext_resource type="Script" path="res://TextureButton.gd" id="14_xsqun"]
+[ext_resource type="Texture2D" uid="uid://iscjxtcyrxfg" path="res://Kuvat/Rpkk_logo-removebg-preview.png" id="15_dnp6c"]
 
 [sub_resource type="Animation" id="Animation_yjtoj"]
 resource_name = "Idle"
@@ -122,10 +122,6 @@ _data = {
 "Sali5": SubResource("Animation_vhuj8")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u26k5"]
-radius = 3.5375
-height = 23.375
-
 [sub_resource type="InputEventKey" id="InputEventKey_cw7v6"]
 device = -1
 keycode = 32
@@ -150,9 +146,9 @@ centered = false
 
 [node name="Ukkeli Salilla" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(544, 485)
-scale = Vector2(10, 10)
-texture = ExtResource("7_7qprb")
+position = Vector2(600, 500)
+scale = Vector2(10, 9.96875)
+texture = ExtResource("3_1vhkl")
 script = ExtResource("4_tt3rb")
 
 [node name="Timer" type="Timer" parent="Ukkeli Salilla"]
@@ -165,17 +161,9 @@ libraries = {
 
 [node name="Paino" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(644, 554)
+position = Vector2(720, 552)
 scale = Vector2(10, 10)
 texture = ExtResource("6_d5awo")
-
-[node name="StaticBody2D" type="Area2D" parent="Paino"]
-script = ExtResource("7_0ybmn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paino/StaticBody2D"]
-position = Vector2(-2.51248, -1.5375)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_u26k5")
 
 [node name="Points Text" type="CanvasLayer" parent="."]
 script = ExtResource("7_elu2d")
@@ -195,13 +183,27 @@ text = "Pisteet : 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label" type="Label" parent="Points Text"]
+offset_left = 217.0
+offset_top = 595.0
+offset_right = 756.0
+offset_bottom = 678.0
+theme_override_font_sizes/font_size = 30
+text = "Paina Välilyöntiä/Space nostaaksesi"
+
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 1.0
-offset_top = 4.0
-offset_right = 832.0
-offset_bottom = 646.0
+offset_left = 213.0
+offset_top = 592.0
+offset_right = 739.0
+offset_bottom = 642.0
 shortcut = SubResource("Shortcut_4ctf8")
 script = ExtResource("14_xsqun")
+
+[node name="RPKK logo" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(111.081, 604.5)
+scale = Vector2(0.502813, 0.54918)
+texture = ExtResource("15_dnp6c")
 
 [connection signal="timeout" from="Ukkeli Salilla/Timer" to="Ukkeli Salilla" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="Ukkeli Salilla/AnimationPlayer" to="Ukkeli Salilla" method="_on_animation_player_animation_finished"]

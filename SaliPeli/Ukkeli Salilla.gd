@@ -7,7 +7,7 @@ extends Sprite2D
 
 @onready var pisteet = 0
 
-@onready var vaikeusaste = 1
+@onready var vaikeusaste = 1 
 
 var klick = 0
 
@@ -47,10 +47,8 @@ func _on_texture_button_pressed():
 	klick += 1
 	if Input.is_action_pressed("Nosto") && klick <= 1 * vaikeusaste:
 		animation_player.play("Sali1")
-		print("safja")
 		
 	if Input.is_action_pressed("Nosto") && klick == 2 * vaikeusaste:
-		print("iojgsd<")
 		animation_player.play("Sali2")
 		
 	if Input.is_action_pressed("Nosto") && klick == 3 * vaikeusaste:
