@@ -14,20 +14,10 @@ func double_click_detect()->bool:
 			return true
 	last_click = new_click
 	return false
-	
-func _ready()->void:
-	#connect("pressed", self, "on_pressed")
-	#("double_click", self, "on_double_click") 
-	pass
 
 func _on_button_pressed():
 	if double_click_detect():
 		emit_signal("double_click")
 		
-#func on_pressed()->void:
-	#if double_click_detect("TextureButton"):
-		#emit_signal("double_click")
 
-#func on_double_click()->void:
-	#animation_player.play("Sali2")
 
