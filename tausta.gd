@@ -1,6 +1,4 @@
 extends Node2D
 
-var points = 0
-
-func _ready():
-	pass
+func _on_ukkeli_salilla_time():
+	$Control.show_gameover()
