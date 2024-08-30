@@ -8,6 +8,7 @@ extends Sprite2D
 @onready var control = $"../Control"
 @onready var Painalabel = $"../Points Text/Label"
 
+
 @onready var vaikeusaste = 2
 @onready var pisteet = 0
 @onready var tausta = $".."
@@ -22,8 +23,6 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_PAUSABLE
 	Pistelabel.text =str(pisteet)
 	animation_player.play("Idle")
-	#var high_score:int = tausta.save_data.high_score
-
 
 
 func _on_texture_button_pressed():
@@ -48,6 +47,7 @@ func _on_texture_button_pressed():
 		if Input.is_action_pressed("Nosto") && klick == 6 * vaikeusaste:
 			klick = 0
 			pisteet += 1
+			
 			Pistelabel.text = "Pisteesi : " + str(pisteet)
 			if vaikeusaste <= 3:
 				vaikeusaste += 1
@@ -66,3 +66,4 @@ func _process(delta):
 
 func _on_timo_timeout():
 	aika = true
+	Global.score += pisteet

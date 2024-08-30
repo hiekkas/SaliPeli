@@ -21,4 +21,4 @@ func _on_timo_timeout():
 	Vbox.show()
 	color.show()
 	väli.hide()
-	
+	await Leaderboards.post_guest_score("ilikkansali-high-score-OR0q", Global.score, "Vieras")
