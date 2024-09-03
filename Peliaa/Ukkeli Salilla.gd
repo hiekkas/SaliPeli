@@ -70,4 +70,4 @@ func _process(delta):
 
 func _on_timo_timeout():
 	aika = true
-	Global.score += lead
+	Global.score = lead
