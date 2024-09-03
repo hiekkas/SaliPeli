@@ -1,0 +1,523 @@
+[gd_scene load_steps=35 format=3 uid="uid://grws2xp23do6"]
+
+[ext_resource type="Script" path="res://Peliaa/tausta.gd" id="1_ti18t"]
+[ext_resource type="Texture2D" uid="uid://c2ks2qcascvsq" path="res://Kuvat/pxArt.png" id="2_gxwy2"]
+[ext_resource type="Texture2D" uid="uid://cbx8ch4pap50q" path="res://Kuvat/Idle 1.png" id="3_ryghv"]
+[ext_resource type="Script" path="res://Peliaa/Ukkeli Salilla.gd" id="4_opxds"]
+[ext_resource type="Texture2D" uid="uid://ttugughso8kl" path="res://Kuvat/Idle 2.png" id="5_decau"]
+[ext_resource type="Texture2D" uid="uid://c171m727xcxsj" path="res://Kuvat/Painon nosto 1.png" id="6_pku4w"]
+[ext_resource type="Texture2D" uid="uid://dr6a2tp485ity" path="res://Kuvat/0.png" id="7_pwum8"]
+[ext_resource type="Texture2D" uid="uid://cvvj2hd41161m" path="res://Kuvat/Painon nosto 2.png" id="8_pmidn"]
+[ext_resource type="Texture2D" uid="uid://cv5lyg0d6kv11" path="res://Kuvat/25.png" id="9_buoaf"]
+[ext_resource type="Texture2D" uid="uid://c4t0vmy7yr3ph" path="res://Kuvat/Painon nosto 3.png" id="10_2famg"]
+[ext_resource type="Texture2D" uid="uid://c5pwoaylimner" path="res://Kuvat/50.png" id="11_bi4wt"]
+[ext_resource type="Texture2D" uid="uid://d2fkvphmovu40" path="res://Kuvat/Painon nosto 4.png" id="12_76hxt"]
+[ext_resource type="Texture2D" uid="uid://dkevkbhooam26" path="res://Kuvat/75.png" id="13_6cvaj"]
+[ext_resource type="Texture2D" uid="uid://5xabyxd4i1hv" path="res://Kuvat/Painon nosto 5.png" id="14_jphhx"]
+[ext_resource type="Texture2D" uid="uid://bc1my3dyvatst" path="res://Kuvat/Full.png" id="15_lmig1"]
+[ext_resource type="Texture2D" uid="uid://da1entnekk84p" path="res://Kuvat/Paino.png" id="16_eqh7o"]
+[ext_resource type="Texture2D" uid="uid://hjkbk626i1k0" path="res://Kuvat/Pirate.png" id="16_rynwj"]
+[ext_resource type="Script" path="res://Peliaa/Points Text.gd" id="17_3ch40"]
+[ext_resource type="Texture2D" uid="uid://iscjxtcyrxfg" path="res://Kuvat/Rpkk_logo-removebg-preview.png" id="18_8kvmi"]
+[ext_resource type="Script" path="res://Peliaa/Control.gd" id="19_dbmxv"]
+[ext_resource type="PackedScene" uid="uid://dgygkbtm0burn" path="res://addons/quiver_leaderboards/leaderboard_ui.tscn" id="20_nlyh5"]
+
+[sub_resource type="Animation" id="Animation_yjtoj"]
+resource_name = "Idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_ryghv"), ExtResource("5_decau")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Paino:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1.42369e-05, 1e-05),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2y2lp"]
+resource_name = "Sali1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_pku4w")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Bar:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_pwum8")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Paino:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Paino:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_yopiq"]
+resource_name = "Sali2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_pmidn")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Bar:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_buoaf")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Paino:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(5, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ryshk"]
+resource_name = "Sali3"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_2famg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Bar:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_bi4wt")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Paino:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-6, -2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Paino:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_8dw2a"]
+resource_name = "Sali4"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_76hxt")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Bar:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_6cvaj")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Paino:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-9, -3)]
+}
+
+[sub_resource type="Animation" id="Animation_vhuj8"]
+resource_name = "Sali5"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_jphhx")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Bar:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_lmig1")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Paino:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, -13)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Paino:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2o5k1"]
+_data = {
+"Idle": SubResource("Animation_yjtoj"),
+"Sali1": SubResource("Animation_2y2lp"),
+"Sali2": SubResource("Animation_yopiq"),
+"Sali3": SubResource("Animation_ryshk"),
+"Sali4": SubResource("Animation_8dw2a"),
+"Sali5": SubResource("Animation_vhuj8")
+}
+
+[sub_resource type="InputEventKey" id="InputEventKey_cw7v6"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_4ctf8"]
+events = [SubResource("InputEventKey_cw7v6")]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g1i47"]
+
+[sub_resource type="Theme" id="Theme_q846e"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_1q00b"]
+device = -1
+keycode = 82
+unicode = 114
+
+[sub_resource type="Shortcut" id="Shortcut_uxafh"]
+events = [SubResource("InputEventKey_1q00b")]
+
+[node name="Tausta" type="Node2D"]
+script = ExtResource("1_ti18t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Tausta png" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.280762, 0.21224)
+texture = ExtResource("2_gxwy2")
+centered = false
+
+[node name="ukkeli salilla" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(700, 500)
+scale = Vector2(10, 9.96875)
+texture = ExtResource("3_ryghv")
+script = ExtResource("4_opxds")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ukkeli salilla"]
+libraries = {
+"": SubResource("AnimationLibrary_2o5k1")
+}
+
+[node name="Hattu" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(548, 177)
+scale = Vector2(7.65625, 6.82143)
+texture = ExtResource("16_rynwj")
+
+[node name="Paino" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(660, 390)
+scale = Vector2(10, 10)
+texture = ExtResource("16_eqh7o")
+offset = Vector2(0, -1)
+
+[node name="Points Text" type="CanvasLayer" parent="."]
+script = ExtResource("17_3ch40")
+
+[node name="Points" type="Label" parent="Points Text"]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.116
+anchor_top = 0.098
+anchor_right = 0.116
+anchor_bottom = 0.098
+offset_left = 316.368
+offset_top = -13.504
+offset_right = 517.368
+offset_bottom = 41.496
+theme_override_font_sizes/font_size = 40
+text = "Pisteesi : 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Points Text"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 370.0
+offset_top = 590.0
+offset_right = 791.0
+offset_bottom = 640.0
+theme_override_font_sizes/font_size = 30
+text = "Paina välilyöntiä nostaaksesi"
+
+[node name="Score" type="Label" parent="Points Text"]
+offset_left = 509.0
+offset_top = 103.0
+offset_right = 574.0
+offset_bottom = 126.0
+text = "Score : 0"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 213.0
+offset_top = 592.0
+offset_right = 739.0
+offset_bottom = 642.0
+shortcut = SubResource("Shortcut_4ctf8")
+
+[node name="RPKK logo" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(86.537, 609)
+scale = Vector2(0.345215, 0.377049)
+texture = ExtResource("18_8kvmi")
+
+[node name="Bar" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(114, 132)
+scale = Vector2(9.625, 9.625)
+texture = ExtResource("15_lmig1")
+
+[node name="TIMO" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Label" type="Label" parent="TIMO"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -62.0
+offset_right = -3.0
+offset_bottom = 42.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "1:30"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 371.0
+offset_top = 9.0
+offset_right = 411.0
+offset_bottom = 49.0
+scale = Vector2(10.4554, 15.7605)
+script = ExtResource("19_dbmxv")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+visible = false
+material = SubResource("CanvasItemMaterial_g1i47")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -1.0
+offset_right = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.97668, 1.02105)
+theme = SubResource("Theme_q846e")
+color = Color(0, 0, 0, 0.941176)
+
+[node name="UII" type="CanvasLayer" parent="Control"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/UII"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -341.0
+offset_top = -92.0
+offset_right = 75.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Teksti" type="Label" parent="Control/UII/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Pelaa uudelleen"
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="Restart" type="Label" parent="Control/UII/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Control/UII/VBoxContainer/Restart"]
+layout_mode = 0
+offset_left = 150.0
+offset_right = 173.0
+offset_bottom = 31.0
+scale = Vector2(5, 3.5)
+shortcut = SubResource("Shortcut_uxafh")
+text = "@"
+icon_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 8.22542
+offset_top = 13.1976
+offset_right = 75.2879
+offset_bottom = 44.1976
+scale = Vector2(0.287394, 0.109919)
+
+[node name="Label" type="Label" parent="Control"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 11.573
+offset_top = 10.5327
+offset_right = 73.573
+offset_bottom = 33.5327
+scale = Vector2(0.184179, 0.0923938)
+text = "Nimesi?"
+
+[node name="LeaderboardUI" parent="." instance=ExtResource("20_nlyh5")]
+offset_left = 831.0
+offset_top = 330.0
+offset_right = 1145.0
+offset_bottom = 646.0
+
+[connection signal="animation_finished" from="ukkeli salilla/AnimationPlayer" to="ukkeli salilla" method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="TextureButton" to="ukkeli salilla" method="_on_texture_button_pressed"]
+[connection signal="timeout" from="TIMO" to="ukkeli salilla" method="_on_timo_timeout"]
+[connection signal="timeout" from="TIMO" to="Control" method="_on_timo_timeout"]
+[connection signal="pressed" from="Control/UII/VBoxContainer/Restart/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/UII/VBoxContainer/Restart/Button" to="Control" method="_on_button_pressed"]

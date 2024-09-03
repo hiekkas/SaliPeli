@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://grws2xp23do6"]
+
+[ext_resource type="Script" path="res://tausta.gd" id="1_7ml2h"]
+[ext_resource type="Texture2D" uid="uid://b52o66a8igti5" path="res://Kuvat/Sali.png" id="1_sp1qs"]
+[ext_resource type="Texture2D" uid="uid://d2ktp3rtultqm" path="res://Kuvat/New Piskel-1.png.png" id="3_g3ijo"]
+[ext_resource type="Script" path="res://Ukkeli Salilla.gd" id="4_tt3rb"]
+[ext_resource type="Texture2D" uid="uid://1hhxkoc5mot3" path="res://Kuvat/New Piskel-2.png.png" id="5_bt2p0"]
+
+[sub_resource type="Animation" id="Animation_yjtoj"]
+resource_name = "Idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_g3ijo"), ExtResource("5_bt2p0")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2o5k1"]
+_data = {
+"Idle": SubResource("Animation_yjtoj")
+}
+
+[node name="Tausta" type="Node2D"]
+script = ExtResource("1_7ml2h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Tausta png" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1.73756, 1.63198)
+texture = ExtResource("1_sp1qs")
+centered = false
+
+[node name="Ukkeli Salilla" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(588, 457)
+scale = Vector2(10, 10)
+texture = ExtResource("5_bt2p0")
+script = ExtResource("4_tt3rb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ukkeli Salilla"]
+libraries = {
+"": SubResource("AnimationLibrary_2o5k1")
+}

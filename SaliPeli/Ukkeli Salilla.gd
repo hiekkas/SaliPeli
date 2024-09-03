@@ -7,7 +7,10 @@ extends Sprite2D
 
 @onready var pisteet = 0
 
+
+
 @onready var vaikeusaste = 1 
+
 
 var klick = 0
 
@@ -15,29 +18,6 @@ func _ready():
 	label.text =str(pisteet)
 	animation_player.play("Idle")
 	
-
-#func _process(delta):
-	#if Input.is_action_just_pressed("Nosto"):
-		#animation_player.play("Sali1")
-
-	#if Input.is_action_just_pressed("Nosto") and _on_animation_player_animation_finished("Sali1"):
-		#animation_player.play("Sali2")
-
-	#if Input.is_action_just_pressed("Nosto") and _on_animation_player_animation_finished("Sali2"):
-		#animation_player.play("Sali3")
-	
-	#if Input.is_action_just_pressed("Nosto") and _on_animation_player_animation_finished("Sali3"):
-		#animation_player.play("Sali4")
-	
-	#if Input.is_action_just_pressed("Nosto") and _on_animation_player_animation_finished("Sali4"):
-		#animation_player.play("Sali5")
-
-#func _on_animation_player_animation_finished(Sali1):
-	#if Input.is_action_just_pressed("Nosto"):
-		#animation_player.play("Sali2")
-
-
-
 func _on_texture_button_double_click():
 	if Input.is_action_just_pressed("Nosto"):
 		animation_player.play("Sali2")
@@ -65,6 +45,7 @@ func _on_texture_button_pressed():
 		pisteet += 1
 		vaikeusaste += 1
 		label.text = "Pisteet : " + str(pisteet)
+		
 #func _on_timer_timeout():
 	#if animation_player.play("Sali2") && timer.timer_timeout:
 		#print("ajastin")
