@@ -5,6 +5,7 @@ extends Sprite2D
 @onready var timerlabel = $"../TIMO/Label"
 @onready var timer = $"../TIMO"
 @onready var Pistelabel = $"../Points Text/Points"
+@onready var Scorelabel = $"../Points Text/Score"
 @onready var control = $"../Control"
 @onready var Painalabel = $"../Points Text/Label"
 
@@ -16,6 +17,7 @@ extends Sprite2D
 var aika = false  
 var timeron = false
 var klick = 0
+var lead = 0
 
 signal gameovertime
 
@@ -29,6 +31,9 @@ func _on_texture_button_pressed():
 	klick += 1
 	Painalabel.hide()
 	if aika == false:
+		print(lead)
+		lead += 1
+		Scorelabel.text = "Score : " + str(lead)
 		if Input.is_action_pressed("Nosto") && klick <= 1 * vaikeusaste:
 			animation_player.play("Sali1")
 			emit_signal("gameovertime")
@@ -47,7 +52,6 @@ func _on_texture_button_pressed():
 		if Input.is_action_pressed("Nosto") && klick == 6 * vaikeusaste:
 			klick = 0
 			pisteet += 1
-			
 			Pistelabel.text = "Pisteesi : " + str(pisteet)
 			if vaikeusaste <= 3:
 				vaikeusaste += 1
@@ -66,4 +70,4 @@ func _process(delta):
 
 func _on_timo_timeout():
 	aika = true
-	Global.score += pisteet
+	Global.score += lead
