@@ -5,7 +5,8 @@ extends Control
 @onready var väli = $"../Points Text/Label"
 @onready var kirjoitusteksti = $LineEdit
 @onready var label = $Label
-@onready var nimi = ""
+@onready var nimi = "Vieras"
+
 signal gameover
 signal new_text
 
@@ -35,4 +36,3 @@ func _tulos():
 
 func _on_line_edit_text_changed(new_text):
 	nimi = new_text
-		
