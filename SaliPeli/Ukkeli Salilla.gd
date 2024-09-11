@@ -7,7 +7,10 @@ extends Sprite2D
 
 @onready var pisteet = 0
 
-@onready var vaikeusaste = 1   
+
+
+@onready var vaikeusaste = 1 
+
 
 var klick = 0
 

@@ -1,4 +1,8 @@
+
 [gd_scene load_steps=23 format=3 uid="uid://grws2xp23do6"]
+
+[gd_scene load_steps=24 format=3 uid="uid://grws2xp23do6"]
+
 
 [ext_resource type="Script" path="res://tausta.gd" id="1_7ml2h"]
 [ext_resource type="Texture2D" uid="uid://cnus2ngodh2bh" path="res://Kuvat/Sali.png" id="1_sp1qs"]
@@ -12,6 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://c4t0vmy7yr3ph" path="res://Kuvat/Painon nosto 3.png" id="8_giege"]
 [ext_resource type="Texture2D" uid="uid://d2fkvphmovu40" path="res://Kuvat/Painon nosto 4.png" id="9_fo2px"]
 [ext_resource type="Texture2D" uid="uid://5xabyxd4i1hv" path="res://Kuvat/Painon nosto 5.png" id="10_swjd5"]
+
+
+[ext_resource type="Script" path="res://TextureButton.gd" id="14_xsqun"]
+
 [ext_resource type="Texture2D" uid="uid://iscjxtcyrxfg" path="res://Kuvat/Rpkk_logo-removebg-preview.png" id="15_dnp6c"]
 
 [sub_resource type="Animation" id="Animation_yjtoj"]
@@ -196,6 +204,12 @@ offset_top = 592.0
 offset_right = 739.0
 offset_bottom = 642.0
 shortcut = SubResource("Shortcut_4ctf8")
+
+[node name="RPKK logo" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(111.081, 604.5)
+scale = Vector2(0.502813, 0.54918)
+texture = ExtResource("15_dnp6c")
 
 [node name="RPKK logo" type="Sprite2D" parent="."]
 texture_filter = 1
